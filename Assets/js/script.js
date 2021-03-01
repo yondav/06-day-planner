@@ -26,5 +26,5 @@ for (i = 0; i < 9; i++) {
 
 // aray for hours
 hourArray = $(".hour").toArray();
-console.log(hourArray);
+// console.log(hourArray);
 });
