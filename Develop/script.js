@@ -9,11 +9,16 @@ $("#currentDay").text(currentDate);
 
 // For loop to structure and append elements in the planner
 for (i = 0; i < 9; i++) {
+    // schedule elements
     var row = $("<div>").addClass("row");
     var time = $("<div>").addClass("hour col-md-2").text(moment("9:00 AM", "hh:mm A").add(i, "hours").format("hA"));
+    // adding data attribute to time here to take on the index number. Will need to track the time for color coding later
     time.attr("data-time", moment("9:00 AM", "hh:mm A").add(i, "hours").format("hA"));
+    
+
 
     $(".container").append(row);
     $(row).append(time);
+
 }
 });
