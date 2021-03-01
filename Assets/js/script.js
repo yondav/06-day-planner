@@ -23,4 +23,8 @@ for (i = 0; i < 9; i++) {
     $(time).after(task);
     $(task).after(saveBtn);
 }
+
+// aray for hours
+hourArray = $(".hour").toArray();
+console.log(hourArray);
 });
