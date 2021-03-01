@@ -31,6 +31,24 @@ for (i = 0; i < hourArray.length; i++) {
     $(hourArray[i]).siblings("textarea").text(localStorage.getItem($(hourArray[i]).attr("data-time")));
 }
 
+if (moment().isSame(moment("9:00 AM", "hh:mm A").add(i, "hours"), "hour")) {
+    $(task).addClass("present");
+}
+else if (moment().isBefore(moment("9:00 AM", "hh:mm A").add(i, "hours"), "hour")) {
+    $(task).addClass("future");
+}
+else if(moment().isAfter(moment("9:00 AM", "hh:mm A").add(i, "hours"), "hour")); {
+    $(task).addClass("past");
+}
+
+//trying to figure out how to get an hour long time range
+
+// var currentTime = moment().format("LT");
+// console.log(currentTime);
+// var startTime = time;
+// console.log(startTime);
+
+
 $(".saveBtn").on("click", function() {
     // console.log("save");
     localStorage.setItem($(this).siblings('div.hour').attr("data-time"), $(this).siblings("textarea").val());
