@@ -29,17 +29,33 @@ hourArray = $(".hour").toArray();
 // console.log(hourArray);
 for (i = 0; i < hourArray.length; i++) {
     $(hourArray[i]).siblings("textarea").text(localStorage.getItem($(hourArray[i]).attr("data-time")));
+
+
+    var currentHour = moment().format("hA");
+    console.log(currentHour);
+
+    if(currentHour === $(hourArray[i]).attr("data-time")) {
+        $(hourArray[i]).siblings("textarea").addClass("present");
+    }
+    else if(currentHour > $(hourArray[i]).attr("data-time")) {
+        $(hourArray[i]).siblings("textarea").addClass("future");
+    }
+    else if(currentHour < $(hourArray[i]).attr("data-time")) {
+        $(hourArray[i]).siblings("textarea").addClass("past");
+    }
+
+    // else if(currentHour < $(hourArray[i])
+    // if (moment().isSame(moment("9:00 AM", "hh:mm A").add(i, "hours"), time)) {
+    //     $(task).addClass("present");
+    // }
+    // else if (moment().isBefore(moment("9:00 AM", "hh:mm A").add(i, "hours"), time)) {
+    //     $(task).addClass("future");
+    // }
+    // else if(moment().isAfter(moment("9:00 AM", "hh:mm A").add(i, "hours"), time)); {
+    //     $(task).addClass("past");
+    // }
 }
 
-if (moment().isSame(moment("9:00 AM", "hh:mm A").add(i, "hours"), "hour")) {
-    $(task).addClass("present");
-}
-else if (moment().isBefore(moment("9:00 AM", "hh:mm A").add(i, "hours"), "hour")) {
-    $(task).addClass("future");
-}
-else if(moment().isAfter(moment("9:00 AM", "hh:mm A").add(i, "hours"), "hour")); {
-    $(task).addClass("past");
-}
 
 //trying to figure out how to get an hour long time range
 
