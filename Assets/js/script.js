@@ -13,7 +13,7 @@ for (i = 0; i < 9; i++) {
     var row = $("<div>").addClass("row");
     var time = $("<div>").addClass("hour col-md-2").text(moment("9:00 AM", "hh:mm A").add(i, "hours").format("hA"));
     // adding data attribute to time here to take on the index number. Will need to track the time for color coding later
-    // time.attr("data-time", moment("9:00 AM", "hh:mm A").add(i, "hours").format("hA"));
+    time.attr("data-time", moment("9:00 AM", "hh:mm A").add(i, "hours").format("hA"));
     var task = $("<textarea>").addClass("col-md-8");
     var saveBtn = $("<button>").addClass("saveBtn col-md-2").html('<i class="fas fa-save"></i>');
 
@@ -27,4 +27,11 @@ for (i = 0; i < 9; i++) {
 // aray for hours
 hourArray = $(".hour").toArray();
 // console.log(hourArray);
+
+// function on event listener on submit button for click
+// set item in local storage, text in both divs (hour & textarea)
+$(".saveBtn").on("click", function() {
+    // console.log("save");
+    localStorage.setItem($(this).siblings('div.hour').attr("data-time"), $(this).siblings("textarea").val());
+})
 });
