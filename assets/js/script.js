@@ -42,31 +42,11 @@ for (i = 0; i < hourArray.length; i++) {
     }
     else if(currentHour < $(hourArray[i]).attr("data-time")) {
         $(hourArray[i]).siblings("textarea").addClass("past");
-    }
-
-    // else if(currentHour < $(hourArray[i])
-    // if (moment().isSame(moment("9:00 AM", "hh:mm A").add(i, "hours"), time)) {
-    //     $(task).addClass("present");
-    // }
-    // else if (moment().isBefore(moment("9:00 AM", "hh:mm A").add(i, "hours"), time)) {
-    //     $(task).addClass("future");
-    // }
-    // else if(moment().isAfter(moment("9:00 AM", "hh:mm A").add(i, "hours"), time)); {
-    //     $(task).addClass("past");
-    // }
-}
-
-
-//trying to figure out how to get an hour long time range
-
-// var currentTime = moment().format("LT");
-// console.log(currentTime);
-// var startTime = time;
-// console.log(startTime);
-
+    };
+};
 
 $(".saveBtn").on("click", function() {
     // console.log("save");
     localStorage.setItem($(this).siblings('div.hour').attr("data-time"), $(this).siblings("textarea").val());
-})
+});
 });
