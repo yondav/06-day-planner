@@ -13,7 +13,7 @@ for (i = 0; i < 9; i++) {
     var row = $("<div>").addClass("row");
     var time = $("<div>").addClass("hour col-md-2").text(moment("9:00 AM", "hh:mm A").add(i, "hours").format("hA"));
     // data attribute
-    time.attr("data-time", moment("9:00 AM", "hh:mm A").add(i, "hours").format("hA"));
+    time.attr("data-time", moment("9:00 AM", "hh:mm A").add(i, "hours").format("kA"));
     var task = $("<textarea>").addClass("col-md-8");
     var saveBtn = $("<button>").addClass("saveBtn col-md-2").html('<i class="fas fa-save"></i>');
 
@@ -31,17 +31,23 @@ for (i = 0; i < hourArray.length; i++) {
     $(hourArray[i]).siblings("textarea").text(localStorage.getItem($(hourArray[i]).attr("data-time")));
 
 
-    var currentHour = moment().format("hA");
-    console.log(currentHour);
+    var currentHour = moment().format("kA");
+    var currentHourInt = parseInt(currentHour);
+    // console.log(currentHourInt);
+    // console.log(currentHour);
+    var dataTime = $(hourArray[i]).attr("data-time");
+    var dataTimeInt = parseInt(dataTime);
+    // console.log(dataTime);
+    // console.log(dataTimeInt);
 
-    if(currentHour === $(hourArray[i]).attr("data-time")) {
+    if(currentHourInt === dataTimeInt) {
         $(hourArray[i]).siblings("textarea").addClass("present");
     }
-    else if(currentHour > $(hourArray[i]).attr("data-time")) {
-        $(hourArray[i]).siblings("textarea").addClass("future");
-    }
-    else if(currentHour < $(hourArray[i]).attr("data-time")) {
+    else if(currentHourInt > dataTimeInt) {
         $(hourArray[i]).siblings("textarea").addClass("past");
+    }
+    else if(currentHourInt < dataTimeInt) {
+        $(hourArray[i]).siblings("textarea").addClass("future");
     };
 };
 
