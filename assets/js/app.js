@@ -18,7 +18,7 @@ $(document).ready(function () {
     );
     var task = $('<textarea>').addClass('col-md-8');
     var saveBtn = $('<button>')
-      .attr('name', 'save')
+      .attr('aria-label', 'save')
       .addClass('saveBtn col-md-2')
       .html('<i class="fas fa-save"></i>');
 
