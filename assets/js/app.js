@@ -1,8 +1,20 @@
 var currentDate = moment().format('ddd MMMM DD' + ', ' + 'YYYY' + ', ' + 'LT');
+var contrast = $('#contrast');
 
 $(document).ready(function () {
   // Display today's date
   $('#currentDay').text(currentDate);
+
+  contrast.on('click', function () {
+    var body = $('body');
+    if (body.hasClass('dark')) {
+      body.removeClass('dark');
+      contrast.html('<i class="fas fa-moon">');
+    } else {
+      body.addClass('dark');
+      contrast.html('<i class="fas fa-sun"></i>');
+    }
+  });
 
   // For loop to structure and append elements in the planner
   for (i = 0; i < 9; i++) {
