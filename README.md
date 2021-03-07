@@ -4,9 +4,7 @@
 
 I was assigned to build out a demo of a day planner app that allows users to input tasks at a given our in the day and save it to local storage. The hours are color coded based on the current hour.
 
-## Deployed Webpage
-
-https://yondav.github.io/06-day-planner/
+- <a href="https://yondav.github.io/06-day-planner/">Deployed Webpage</a>
 
 <!-- screengrabs -->
 
@@ -36,3 +34,16 @@ The following file path is for an alternate build with more potential for expans
 
 - Ensure you are on the alt branch
 - Open index.html to access the html file
+- Nested in the assets folder, you will find two folders: css and js
+- In the css folder you will find style.css
+- In the js folder you will find app.js
+
+The assignment was to create functionality in an existing html file. Given the objective to develop this into a functioninal scheduling app, I enjoyed the idea of approaching it in two different ways. It's a very simple application as it is now but I see the logical path to expanding on it. It was fun playing with bootstrap's class list and learning how to use my own styles to collaborate with bootstrap's built in features.
+
+### APIs Used
+
+- <a href="https://jquery.com/">jQuery</a>
+- <a href="https://momentjs.com/">Moment.js</a>
+- <a href="https://getbootstrap.com/">Bootstrap</a>
+- <a href="https://fontawesome.com/">Font Awesome</a>
+- <a href="https://fonts.google.com/">Google Fonts</a>
