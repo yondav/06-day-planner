@@ -8,6 +8,10 @@ I was assigned to build out a demo of a day planner app that allows users to inp
 
 <!-- screengrabs -->
 
+![responsive, day/night toggle](assets/readme/responsive.gif)
+![save to local storage](assets/readme/local-storage.gif)
+![lighthouse report](assets/readme/lighthouse.png)
+
 ## My approach
 
 When initially contemplating the architecture of this project, I considered the fact that the functionality of the current application calls for static elements. That is to say that the hours in question are always 9-5 at the moment and so it's sensible to hardcode those elements into the html file and create the functionality dynamically using JavaScript.
