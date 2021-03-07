@@ -9,17 +9,17 @@ $(document).ready(function () {
     // schedule elements
     var row = $('<div>').addClass('row');
     var time = $('<div>')
-      .addClass('hour col-md-2')
+      .addClass('hour col-2')
       .text(moment('9:00 AM', 'hh:mm A').add(i, 'hours').format('hA'));
     // data attribute
     time.attr(
       'data-time',
       moment('9:00 AM', 'hh:mm A').add(i, 'hours').format('kA')
     );
-    var task = $('<textarea>').addClass('col-md-8');
+    var task = $('<textarea>').addClass('col-8');
     var saveBtn = $('<button>')
       .attr('aria-label', 'save')
-      .addClass('saveBtn col-md-2')
+      .addClass('saveBtn col-2')
       .html('<i class="fas fa-save"></i>');
 
     $('.container').append(row);
