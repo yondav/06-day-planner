@@ -1,9 +1,21 @@
 var currentDate = moment().format('ddd MMMM DD' + ', ' + 'YYYY' + ', ' + 'LT');
 console.log(currentDate);
+var contrast = $('#contrast');
 
 $(document).ready(function () {
   // display today's date
   $('#currentDay').text(currentDate);
+
+  contrast.on('click', function () {
+    var body = $('body');
+    if (body.hasClass('dark')) {
+      body.removeClass('dark');
+      contrast.html('<i class="fas fa-moon">');
+    } else {
+      body.addClass('dark');
+      contrast.html('<i class="fas fa-sun"></i>');
+    }
+  });
 
   // array for hours
   hourArray = $('.hour').toArray();

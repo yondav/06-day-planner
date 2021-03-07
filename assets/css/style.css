@@ -5,6 +5,15 @@
   --primary-dark: rgb(51, 51, 51);
   --primary-light: rgb(249, 249, 249);
   --secondary-light: rgba(245, 244, 244, 0.6);
+  --grad-1: rgba(240, 235, 235, 0.6);
+  --grad-2: rgba(229, 229, 229, 0.6);
+}
+
+.dark {
+  --primary-dark: rgb(249, 249, 249);
+  --primary-light: rgb(51, 51, 51);
+  --grad-1: rgba(60, 67, 67, 0.6);
+  --grad-2: rgba(71, 73, 73, 0.6);
 }
 
 body {
@@ -13,15 +22,14 @@ body {
   line-height: 1;
   color: var(--primary-dark);
   background-color: var(--primary-light);
+  transition: all 0.6s 0.2s ease-in-out;
 }
 
 .my-header {
+  padding-bottom: 0 !important;
   border-bottom-left-radius: 0.5rem !important;
   border-bottom-right-radius: 0.5rem !important;
-  background: linear-gradient(
-    rgba(240, 235, 235, 0.6) 0%,
-    rgba(229, 229, 229, 0.6) 100%
-  );
+  background: linear-gradient(var(--grad-1) 0%, var(--grad-2) 100%);
   box-shadow: 0 0.5rem 0.2rem rgba(0, 0, 0, 0.15);
 }
 
@@ -37,6 +45,12 @@ header p {
   margin-bottom: 0.3rem;
   text-align: center;
   font-size: 0.7em;
+}
+
+#contrast {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-bottom: 0.5rem;
 }
 
 .my-container {
@@ -100,4 +114,13 @@ textarea {
 
 .future {
   background-color: rgb(119, 221, 119);
+}
+
+@media screen and (min-width: 748px) {
+  header h3 {
+    font-size: 2.3rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
 }
